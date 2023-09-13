@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+  <head>
+    <title>Сайт</title>
+     </head>
+  <body>    
+  </body>
+
+<script>
+  let start = true;
+
+  while(start){
+
+      let enter = confirm("Піднести число до степеня?");
+
+  if (enter){
+      let number = parseInt (prompt("Введіть число яке хочете піднести до степеня"));
+      let power = parseInt (prompt("Введіть ступінь  (діапазон 0-4)"));
+      switch (power){
+          case 0:
+            console.log (`Відповідь: 1 `);
+            break;
+
+          case 1:
+              console.log (`Відповідь: ${number} `);
+              break;         
+    
+          case 2:
+            let resaltCase2 = number * number; 
+            console.log (`Відповідь: ${resaltCase2 } `);
+            break;
+
+          case 3:
+              let resaltCase3 = number * number  * number; 
+              console.log (`Відповідь: ${resaltCase3} `);
+              break;
+
+          case 4:
+              let resaltCase4  = number * number *  number * number; 
+              console.log (`Відповідь: ${resaltCase4} `);
+              break;
+          default:
+              console.log (`Недопустимий діапазон!`);
+      }
+  }
+
+  else{
+      start = false;
+      console.log("Робота програми завершена");  
+  }
+  }
+  </script>
+</html>
