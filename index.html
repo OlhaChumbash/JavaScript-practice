@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+  <head>
+    <title>Сайт</title>
+     </head>
+  <body>    
+  </body>
+
+<script>
+
+let userValue = prompt("Введіть дані:");
+let numberValue = parseFloat(userValue);
+if (!isNaN(numberValue)) {  
+  console.log("Тип даних: number");
+} else if (userValue === "true" || userValue === "false") {   
+  console.log("Тип даних: boolean");
+} else if (userValue === null) {
+   console.log("Тип даних: null");
+} else { 
+  console.log("Тип даних: string");
+}
+  </script>
+</html>
