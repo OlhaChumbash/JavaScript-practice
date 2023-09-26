@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+  <head>
+    <title>Сайт</title>
+     </head>
+  <body>    
+  </body>
+
+<script>
+//////////////////////////////////////////////////////
+let myDate= new Date (prompt ('Введіть  дату у форматі - Рік.Місяць.День'));
+let day = myDate.getDay();
+
+switch (day) {
+  case 0:
+    console.log( 'Неділя' );
+    break;
+  case 1:
+    console.log( 'Понеділок' );
+    break;
+  case 2:
+    console.log( 'Вівторок' );
+    break;
+  case 3:
+    console.log( 'Середа' );
+    break;
+  case 4:
+    console.log( 'Четвер' );
+    break;
+  case 5:
+    console.log( `П'ятниця` );
+    break;
+  case 6:
+    console.log( `Суббота` );
+    break;
+  default:
+    console.log( "Невірний формат введення даних" );
+}
+//////////////////////////////////////////////////////
+
+
+let userInput = prompt("Введіть число від 1 до 7:");
+let dayNumber = parseInt(userInput);
+
+let daysOfWeek = ["Неділя", "Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця", "Субота"];
+let dayOfWeek = "";
+
+if (dayNumber >= 1 && dayNumber <= 7) {
+  dayOfWeek = daysOfWeek[dayNumber];
+} else {
+  dayOfWeek = "Невірне значення. Введіть число від 1 до 7.";
+}
+console.log("День тижня для числа " + dayNumber + " - " + dayOfWeek);
+
+
+
+
+
+
+  </script>
+</html>
