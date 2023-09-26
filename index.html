@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+  <head>
+    <title>Сайт</title>
+     </head>
+  <body>    
+  </body>
+
+<script>
+
+let answer = true;
+let myMas = [];
+let i = 0;
+
+while(answer){
+    answer = prompt ('Введіть  дату у форматі - Рік.Місяць.День');
+     
+    if (answer == false || answer == null || answer == 0){
+        break;
+    }
+    else{  
+        let myDate= new Date (answer);
+        let day = myDate.getDay();
+        if (day == 0 || day ==6){
+            myMas[i] = answer; 
+            i++;            
+            } 
+
+        switch (day) {
+            case 0:
+                console.log( 'Неділя' );
+                break;
+            case 1:
+                console.log( 'Понеділок' );
+                break;
+            case 2:
+                console.log( 'Вівторок' );
+                break;
+            case 3:
+                console.log( 'Середа' );
+                break;
+            case 4:
+                console.log( 'Четвер' );
+                break;
+            case 5:
+                console.log( `П'ятниця` );
+                break;
+            case 6:
+                console.log( `Суббота` );
+                break;
+            default:
+                console.log( "Невірний формат введення даних" );
+            }      
+        }
+ }
+console.log(myMas);
+
+
+
+  </script>
+</html>
