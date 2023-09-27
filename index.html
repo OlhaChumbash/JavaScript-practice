@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Сайт</title>
+</head>
+
+<body>
+</body>
+
+<script>
+
+    const Academy = {
+        students: [{ group: "A", groupStudents: [] },
+        { group: "B", groupStudents: [] }
+        ],
+        addStudent: function (group, name) {
+            const existingGroup = this.students.find(function (studentGroup) {
+                return studentGroup.group === group;
+            });
+            if (existingGroup) {
+                existingGroup.groupStudents.push(name);
+            } else {
+                const newGroup = {
+                    group: group,
+                    groupStudents: [name]
+                };
+                this.students.push(newGroup);
+            }
+        },
+        removeStudent: function (group, name) {
+            const existingGroup = this.students.find(function (studentGroup) {
+                return studentGroup.group === group;
+            });
+            if (existingGroup) {
+                const studentIndex = existingGroup.groupStudents.indexOf(name);
+                if (studentIndex !== -1) {
+                    existingGroup.groupStudents.splice(studentIndex, 1);
+                }
+            }
+        },
+        getStudents: function (group, name) {
+            const existingGroup = this.students.find(function (studentGroup) {
+                return studentGroup.group === group;
+            });
+            if (existingGroup) {
+                const studentsInGroup = existingGroup.groupStudents.filter(function (student) {
+                    return student === name;
+                });
+            }
+        },
+        getStudent: function (group, number) {
+            const existingGroup = this.students.find(function (studentGroup) {
+                return studentGroup.group === group;
+            });
+            if (existingGroup && number >= 0 && number < existingGroup.groupStudents.length) {
+                const student = existingGroup.groupStudents[number];
+                console.log(student);
+            } else {
+                console.log("Студента не знайдено");
+            }
+        }
+    }
+    Academy.addStudent("A", "Oleg");
+    Academy.addStudent("B", "Inna");
+    Academy.addStudent("B", "Olya");
+    Academy.addStudent("B", "Tanya");
+    Academy.removeStudent("C", "Rita");
+    Academy.getStudents("A", "Oleg");
+    Academy.getStudent("B", 1);
+
+
+</script>
+
+</html>
