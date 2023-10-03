@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Сайт</title>
+</head>
+
+<body>
+Завдання: EX-7
+Створити обєкт friends з полями:
+students - яке буде масив обєктів з наступними полями,
+name рядок,
+friends масив.
+метод addStudent() (addStudent(name)) додає студента по імені;
+метод addFriend() (addFriend(name, friendName)), яке приймає два параметри name та friendName,
+ і записує в масив friends як друга (friendName), friend і friendsName - це поле name записів обєктів 
+ в масиві students (name і friendName мають існувати, всі імена мають бути унікальні).
+метод showFriends() (showFriends(name)), приймає параметр name і виводить список усіх друзів для вказаноного імені.
+Завдання залити на гіт, назва вітки у форматі: JS-L6:EX-7
+</body>
+
+<script>
+
+const Friends = {
+  students: [],
+
+  addStudent(name) {
+    if (this.students.some(student => student.name === name)) {
+      console.log(`Студент з ім'ям "${name}" вже існує.`);
+    } else {
+      const newStudent = { name, friends: [] };
+      this.students.push(newStudent);
+      console.log(`Студент "${name}" доданий.`);
+    }
+  },
+
+  addFriend(name, friendName) {
+    const student = this.students.find(student => student.name === name);
+    const friend = this.students.find(student => student.name === friendName);
+
+    
+    if (!student) {
+      console.log(`Студент з ім'ям "${name}" не знайдений.`);
+    } else if (!friend) {
+      console.log(`Студент з ім'ям "${friendName}" не знайдений.`);
+    } else {     
+      if (student.friends.includes(friendName)) {
+        console.log(`${friendName} вже є другом ${name}.`);
+      } else {
+        student.friends.push(friendName);
+        friend.friends.push(name);
+        console.log(`"${name}" і "${friendName}" тепер друзі.`);
+      }
+    }
+  },
+
+  showFriends(name) {
+     const student = this.students.find(student => student.name === name);
+    if (!student) {
+      console.log(`Студент з ім'ям "${name}" не знайдений.`);
+    } else {
+      console.log(`Друзі для "${name}": ${student.friends.join(', ')}`);
+    }
+  },
+};
+
+
+Friends.addStudent("Oleg");
+Friends.addStudent("Ira");
+Friends.addFriend("Oleg", "Ira");
+Friends.addFriend("Ira", "Oleg");
+
+
+Friends.showFriends("Oleg");
+Friends.showFriends("Ira");
+
+
+
+
+</script>
+
+</html>
