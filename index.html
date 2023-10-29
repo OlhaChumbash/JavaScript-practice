@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Сайт</title>
+</head>
+<link rel="stylesheet" href="./styles.css">
+
+<body>
+    Завдання: EX-15
+    Додати форму з полями та написати скріпт:
+    Імя (текстове поле, обовязкове, мін. довжина 3 символи, макс. довжина 15 символів, дозволені лише латинські літери);
+    Вік (текстове поле, обовязкове, мін. довжина 1 символ, макс. довжина 2 символи, дозволені лише цифри)
+    Стать (випадний список, обовязкове)
+    Підтвердження умов (чекбокс, обовязкове)
+    Кнопка (тип вибрати самостійно)
+    Скріпт, буде перевіряти поля на корректність введених даних. Реалізувати можна одним і способів:
+    а) при фокусі на полі або при забирання фокуса;
+    б) при кліку по кнопці "Відправити"
+    Завдання залити на гіт, назва вітки у форматі: JS-L13:EX-15
+
+    <form id="myForm">
+        <label for="name">Ім'я:</label>
+        <input type="text" id="name" name="name" data-validation="name">
+        <br>
+        
+        <label for="age">Вік:</label>
+        <input type="text" id="age" name="age" data-validation="age">
+        <br>
+        
+        <label for="gender">Стать:</label>
+        <select id="gender" name="gender" data-validation="gender">
+            <option value=""></option>
+            <option value="чоловік">Чоловік</option>
+            <option value="жінка">Жінка</option>
+        </select>
+        <br>
+        
+        <input type="checkbox" id="confirmation" data-validation="confirmation">
+        <label for="confirmation">Підтвердження умов</label>
+        <br>
+        
+        <button type="submit">Відправити</button>
+    </form>
+
+
+</body>
+
+<script src="./script.js"></script>
+
+</html>
