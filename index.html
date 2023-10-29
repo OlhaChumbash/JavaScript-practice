@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Сайт</title>
+</head>
+
+<body>
+    Завдання: EX-8
+    Написати програму яка:
+    а) приймає урл адресу і робить перехід по ній;
+    б) приймає урл адресу і робить перехід по ній через 4сек;
+    Завдання залити на гіт, назва вітки у форматі: JS-L8:EX-8
+</body>
+
+<script>
+
+function navigate(url) {
+    setTimeout(() => {
+        window.location.href = url;
+    }, 4000);
+}
+
+navigate('https://www.intita.com');
+
+
+
+</script>
+
+</html>
