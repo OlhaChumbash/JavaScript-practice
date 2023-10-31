@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Сайт</title>
+</head>
+<link rel="stylesheet" href="./styles.css">
+
+<body>
+    Завдання: EX-16
+    Реалізувати ротатор зображень, яки буде містити кнопки "вперед" і "назад". Запускатися буде автоматично і змінювати зображення буде кожні 2сек.
+    *Додати під головний зображенням список всіх доступних зображень і виділяти активне зображення
+    Завдання залити на гіт, назва вітки у форматі: JS-L14:EX-16
+
+    <div id="imageContainer">
+        <img src="image1.jpg">      
+    </div>
+    
+    <div id="imageList">
+        <button onclick="prevImage()">Назад</button>
+        <button onclick="next()">Вперед</button>
+    </div>
+    
+    <div id="imagesNames">
+        <span class="name active">image1.jpg</span>
+        <span class="name">image2.jpg</span>
+        <span class="name">image3.jpg</span>
+        <span class="name">image4.jpg</span>
+        <span class="name">image5.jpg</span>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
